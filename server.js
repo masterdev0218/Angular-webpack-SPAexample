@@ -1,6 +1,6 @@
 const express = require('express');
 
-const port = 3001 || process.env.PORT;
+const port = 3002 || process.env.PORT;
 const app = express();
 
 app.engine('html', require('ejs').renderFile);
