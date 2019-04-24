@@ -1,17 +1,101 @@
-Build an App with Angular & Webpack
+# Angular WebPack SPA Example
 
-This sets up a Node project, creates an Angular application and make calls to an external API.
+* Single Page App to make calls to an external API. Built with Angular & bundled using Webpack.
 
-The app is bundled using webpack.
+*** Note: to open web links in a new window use: _ctrl+click on link_**
 
-Link to article:<br>
-https://www.twilio.com/blog/2018/03/building-an-app-from-scratch-with-angular-and-webpack.html
+## Table of contents
 
+* [General info](#general-info)
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [Status](#status)
+* [Inspiration](#inspiration)
+* [Contact](#contact)
 
-More about webpack:<br>
-Webpack is a module bundler, but you can also use it running tasks as well.<br>
-Webpack relies on a dependency graph underneath. Webpack traverses through the source to construct the graph, and it uses this information and configuration to generate bundles.<br>
-Webpack relies on loaders and plugins. Loaders operate on a module level, while plugins rely on hooks provided by webpack and have the best access to its execution process.<br>
-Webpack’s configuration describes how to transform assets of the graphs and what kind of output it should generate. Part of this information can be included in the source itself if features like code splitting are used.<br>
-Hot Module Replacement (HMR) helped to popularize webpack. It's a feature that can enhance the development experience by updating code in the browser without needing a full page refresh.<br>
-Webpack can generate hashes for filenames allowing you to invalidate past bundles as their contents change.<br>
+## General info
+
+* More about webpack:
+
+1. Webpack is a module bundler, but you can also use it running tasks as well.
+
+2. Webpack relies on a dependency graph underneath. Webpack traverses through the source to construct the graph, and it uses this information and configuration to generate bundles.
+
+3. Webpack relies on loaders and plugins. Loaders operate on a module level, while plugins rely on hooks provided by webpack and have the best access to its execution process.
+
+4. Webpack’s configuration describes how to transform assets of the graphs and what kind of output it should generate. Part of this information can be included in the source itself if features like code splitting are used.
+
+5. Hot Module Replacement (HMR) helped to popularize webpack. It's a feature that can enhance the development experience by updating code in the browser without needing a full page refresh.
+
+6. Webpack can generate hashes for filenames allowing you to invalidate past bundles as their contents change.
+
+## Screenshots
+
+![Example screenshot](./img/screen-print.png).
+
+## Technologies
+
+* [Angular v7.2.14](https://angular.io/) & [Angular CLI v7.3.8](https://cli.angular.io/).
+
+* [RxJS Library v6.5.1](https://angular.io/guide/rx-library).
+
+* [Webpack v4.30.0](https://webpack.js.org/) is used to bundle scripts.
+
+* [Node.js v10.15.3](https://nodejs.org/es/) and [Express v4.16.4](https://expressjs.com/)used to host app.
+
+* [ejs v2.6.1](https://ejs.co/) templating language used.
+
+## Setup
+
+Run app using `ng start`. Navigate to `http://localhost:3002/`.
+
+## Code Examples
+
+* server.js - used to make calls to an external API.
+
+```javascript
+const express = require('express');
+
+const port = 3002 || process.env.PORT;
+const app = express();
+
+app.engine('html', require('ejs').renderFile);
+
+app.set('view engine', 'html');
+app.set('views', 'dist');
+
+app.use('/', express.static('dist', { index: false }));
+
+app.get('/*', (req, res) => {
+   res.render('./index', {req, res});
+});
+
+app.listen(port, () => {
+   console.log(`Listening on: http://localhost:${port}`);
+});
+
+```
+
+## Features
+
+* src/index.html used to host the Single Page App.
+
+* Webpack used to bundle code, instead of angular CLI, hence the need for a webpack.config.js file.
+
+* updated to the latest version of Angular 7. Dependencies updated with 0 dependency vulnerabilities.
+
+## Status & To-Do List
+
+* Status: Simple working app.
+
+* To-Do: add commenting and expand functionality.
+
+## Inspiration
+
+* [Twilio Blog: Building an App from Scratch with Angular and Webpack](https://www.twilio.com/blog/2018/03/building-an-app-from-scratch-with-angular-and-webpack.html)
+
+## Contact
+
+Created by [ABateman](https://www.andrewbateman.org) - feel free to contact me!
