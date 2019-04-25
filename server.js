@@ -1,10 +1,12 @@
 const express = require('express');
 
-const port = 3002 || process.env.PORT;
+const port = 3000 || process.env.PORT;
 const app = express();
 
+// use ejs javascript templating to render data.
 app.engine('html', require('ejs').renderFile);
 
+// render html on the server
 app.set('view engine', 'html');
 app.set('views', 'dist');
 

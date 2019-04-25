@@ -1,6 +1,6 @@
 # Angular WebPack SPA Example
 
-* Single Page App to make calls to an external API. Built with Angular & bundled using Webpack.
+* Single Page App to make calls to an external API. Built with Angular & bundled using Webpack. Includes a node.js server.
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
@@ -39,17 +39,17 @@
 
 * [Angular v7.2.14](https://angular.io/) & [Angular CLI v7.3.8](https://cli.angular.io/).
 
-* [RxJS Library v6.5.1](https://angular.io/guide/rx-library).
+* [RxJS Library v6.5.1](https://angular.io/guide/rx-library) and makeCall() function used to consume API data [observable](http://reactivex.io/documentation/observable.html).
 
 * [Webpack v4.30.0](https://webpack.js.org/) is used to bundle scripts.
 
 * [Node.js v10.15.3](https://nodejs.org/es/) and [Express v4.16.4](https://expressjs.com/)used to host app.
 
-* [ejs v2.6.1](https://ejs.co/) templating language used.
+* [ejs v2.6.1](https://ejs.co/) embedded javascript template engine.
 
 ## Setup
 
-Run app using `ng start`. Navigate to `http://localhost:3002/`.
+Already compiled using `npm run build`. Run app using `npm start` then navigate to `http://localhost:3000/`. Thsi starts the compiled build file.
 
 ## Code Examples
 
@@ -58,11 +58,13 @@ Run app using `ng start`. Navigate to `http://localhost:3002/`.
 ```javascript
 const express = require('express');
 
-const port = 3002 || process.env.PORT;
+const port = 3000 || process.env.PORT;
 const app = express();
 
+// use ejs javascript templating to render data.
 app.engine('html', require('ejs').renderFile);
 
+// render html on the server
 app.set('view engine', 'html');
 app.set('views', 'dist');
 
@@ -86,11 +88,13 @@ app.listen(port, () => {
 
 * updated to the latest version of Angular 7. Dependencies updated with 0 dependency vulnerabilities.
 
+* simple angular pipes used to display asynchronous json data: `{{response | async | json}}`.
+
 ## Status & To-Do List
 
-* Status: Simple working app.
+* Status: Simple working app that runs the existing build file. Running `npm run build` just creates an error and does not renew the build file so no changes are included in a new build file.
 
-* To-Do: add commenting and expand functionality.
+* To-Do: add commenting and fix this issue of not compiling.
 
 ## Inspiration
 

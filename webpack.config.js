@@ -6,9 +6,9 @@ const { AngularCompilerPlugin } = require('@ngtools/webpack');
 
 module.exports = function () {
     return {
-        entry: './src/main.ts',
+        entry: './src/main.ts', // this is the entry file
         output: {
-            path: __dirname + '/dist',
+            path: __dirname + '/dist', //webpack needs an absolute path
             filename: 'app.js'
         },
         resolve: {
@@ -23,7 +23,7 @@ module.exports = function () {
             ]
         },
         plugins: [
-            new CopyWebpackPlugin([
+            new CopyWebpackPlugin([ // move assets with compiled app
                 { from: 'src/assets', to: 'assets'}
             ]),
             new HtmlWebpackPlugin({
