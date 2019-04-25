@@ -43,7 +43,9 @@
 
 * [Webpack v4.30.0](https://webpack.js.org/) is used to bundle scripts.
 
-* [Node.js v10.15.3](https://nodejs.org/es/) and [Express v4.16.4](https://expressjs.com/)used to host app.
+* [Node.js v10.15.3](https://nodejs.org/es/)
+
+* [Express v4.16.4](https://expressjs.com/)used to host app, including [Express methods](https://expressjs.com/en/4x/api.html#express.static)
 
 * [ejs v2.6.1](https://ejs.co/) embedded javascript template engine.
 
@@ -53,7 +55,7 @@ Already compiled using `npm run build`. Run app using `npm start` then navigate 
 
 ## Code Examples
 
-* server.js - used to make calls to an external API.
+* the server.js file, as Node.js is used to host the app.
 
 ```javascript
 const express = require('express');
@@ -68,12 +70,15 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.set('views', 'dist');
 
+// use express to serve static file 'dist' (index set to false to disable directoy indexing to default 'index.html')
 app.use('/', express.static('dist', { index: false }));
 
+// retrieve all (*) data from the server to render on the index page
 app.get('/*', (req, res) => {
    res.render('./index', {req, res});
 });
 
+// app to listen for requests on port defined already
 app.listen(port, () => {
    console.log(`Listening on: http://localhost:${port}`);
 });
