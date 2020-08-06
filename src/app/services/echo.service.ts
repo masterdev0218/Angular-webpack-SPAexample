@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-
 @Injectable()
 export class EchoService {
-   constructor(private httpClient: HttpClient) {}
+	constructor(private httpClient: HttpClient) {}
 
-   public makeCall(): Observable<any> {
-       return this.httpClient.get<any>('https://jsonplaceholder.typicode.com/posts/1');
-   }
+	public makeCall(): Observable<any> {
+		return this.httpClient.get<any>(
+			'https://jsonplaceholder.typicode.com/posts/1'
+		);
+	}
 }
 
 /*this is the json data returned above:
