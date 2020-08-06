@@ -15,10 +15,10 @@ app.use('/', express.static('dist', { index: false }));
 
 // retrieve all (*) data from the server to render on the index page
 app.get('/*', (req, res) => {
-   res.render('./index', {req, res});
+	res.render('./index', { req, res });
 });
 
 // app to listen for requests on port defined already
 app.listen(port, () => {
-   console.log(`Listening on: http://localhost:${port}`);
+	console.log(`Listening on: http://localhost:${port}`);
 });

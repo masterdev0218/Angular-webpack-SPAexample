@@ -6,13 +6,9 @@ import { EchoService } from './services/echo.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  bootstrap: [ AppComponent ],
-  imports: [
-    BrowserModule,
-    HttpClientModule
-  ],
-  declarations: [ AppComponent ],
-  providers: [EchoService]
+	bootstrap: [AppComponent],
+	imports: [BrowserModule, HttpClientModule],
+	declarations: [AppComponent],
+	providers: [EchoService],
 })
-export class AppModule {
-}
+export class AppModule {}
