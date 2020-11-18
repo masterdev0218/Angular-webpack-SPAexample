@@ -1,6 +1,7 @@
 # :zap: Angular WebPack SPA Example
 
 * Single Page App to make calls to an external [JSON placeholder API](https://jsonplaceholder.typicode.com/). Built with Angular & bundled using Webpack. Includes a node.js server.
+* Angular 10 is used. Do not update. Replace with more up to date Angular webpack SPA 
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
 
