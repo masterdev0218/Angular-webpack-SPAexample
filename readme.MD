@@ -37,8 +37,8 @@
 ## :signal_strength: Technologies
 
 * [Angular v13](https://angular.io/)
-* [RxJS Library v7](https://angular.io/guide/rx-library) and makeCall() function used to consume API data [observable](http://reactivex.io/documentation/observable.html).
-* [Webpack v5](https://webpack.js.org/) is used to bundle scripts.
+* [RxJS Library v7](https://angular.io/guide/rx-library) used to consume API data [observable](http://reactivex.io/documentation/observable.html).
+* [Moment Custom Webpack Plugin](https://www.npmjs.com/package/moment-locales-webpack-plugin)  used to remove unused Moment.js locales when building with webpack
 
 ## :floppy_disk: Setup
 
@@ -49,7 +49,7 @@
 
 ## :computer: Code Examples
 
-* `echo.service.ts` to fetch API data
+* `echo.service.ts` function to fetch API data
 
 ```typescript
 public makeCall(): Observable<any> {
@@ -67,12 +67,12 @@ public makeCall(): Observable<any> {
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working.
-* To-Do: nothing.
+* Status: Working. Further Webpack optimization can be added to improve Lighthouse score.
+* To-Do: Webpack config.
 
 ## :clap: Inspiration
 
-* [Optimize the bundle size of an Angular application](https://www.youtube.com/watch?v=19T3O7XWJkA)
+* [Youtube Angular: Optimize the bundle size of an Angular application](https://www.youtube.com/watch?v=19T3O7XWJkA)
 
 ## :file_folder: License
 
