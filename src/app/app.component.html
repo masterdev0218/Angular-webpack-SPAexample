@@ -1,3 +1,25 @@
-<h1>Hello World!</h1>
-<h2>This component injects an EchoService</h2>
-Response is still: <span>{{ response | async | json }}</span>
+<div class="container">
+  <h1 class="page-title">France Date/Time: {{ currentTimeFRLocale }}</h1>
+  <div *ngFor="let res of response | async">
+    <div class="blog-card">
+      <div class="meta">
+        <div
+          class="photo"
+          style="
+            background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg);
+          "
+        ></div>
+      </div>
+      <div class="description">
+        <h1>{{ res.title }}</h1>
+        <h2>id: {{ res.id }}</h2>
+        <p>
+          {{ res.body }}
+        </p>
+        <p class="read-more">
+          <a href="https://jsonplaceholder.typicode.com/guide/">Read More</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
