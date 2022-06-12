@@ -16,6 +16,7 @@
   * [:cool: Features](#cool-features)
   * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
   * [:clap: Inspiration](#clap-inspiration)
+  * [:file_folder: License](#file_folder-license)
   * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
@@ -36,7 +37,7 @@
 
 ## :signal_strength: Technologies
 
-* [Angular v13](https://angular.io/)
+* [Angular v14](https://angular.io/)
 * [RxJS Library v7](https://angular.io/guide/rx-library) used to consume API data [observable](http://reactivex.io/documentation/observable.html).
 * [Moment Custom Webpack Plugin](https://www.npmjs.com/package/moment-locales-webpack-plugin)  used to remove unused Moment.js locales when building with webpack
 
@@ -53,17 +54,17 @@
 
 ```typescript
 public makeCall(): Observable<any> {
-		return this.httpClient.get<any>(
-			'https://jsonplaceholder.typicode.com/posts'
-		).pipe(
-      take(1)
-    );
-	}
+  return this.httpClient.get<any>(
+    'https://jsonplaceholder.typicode.com/posts'
+  ).pipe(
+    take(1)
+  );
+}
 ```
 
 ## :cool: Features
 
-* Updated to the latest version of Angular. Dependencies updated with 0 vulnerabilities.
+* None
 
 ## :clipboard: Status & To-Do List
 
