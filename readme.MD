@@ -37,7 +37,7 @@
 
 ## :signal_strength: Technologies
 
-* [Angular v14](https://angular.io/)
+* [Angular v15](https://angular.io/)
 * [RxJS Library v7](https://angular.io/guide/rx-library) used to consume API data [observable](http://reactivex.io/documentation/observable.html).
 * [Moment Custom Webpack Plugin](https://www.npmjs.com/package/moment-locales-webpack-plugin)  used to remove unused Moment.js locales when building with webpack
 
@@ -69,7 +69,7 @@ public makeCall(): Observable<any> {
 ## :clipboard: Status & To-Do List
 
 * Status: Working. Further Webpack optimization can be added to improve Lighthouse score.
-* To-Do: Webpack config.
+* To-Do: Add webpack config. Develop into API data card list
 
 ## :clap: Inspiration
 
